@@ -29,30 +29,17 @@ interface Content {
   rol: string
   ubicacion: string
   disponibilidad: string
-  resumen: string
-  sobreMi: string[]
-  valores: string[]
-  reconocimientos: string[]
-  skills: Skill[]
-  experiencia: Exp[]
-  cursos: Curso[]
-  educacion: Edu[]
-}
-
-export const content: Content = {
-  rol: 'Contadora Pública',
-  ubicacion: 'Nueva Italia, Paraguay',
-  disponibilidad: 'Disponible para nuevas oportunidades',
   resumen:
     'Contadora Pública egresada con honores académicos de la Universidad Nacional de ' +
-    'Asunción, con experiencia en atención al cliente, manejo de caja y gestión ' +
-    'administrativa, y formación complementaria en tributación y planillas electrónicas.',
+    'Asunción, con más de 2 años de experiencia como Analista Contable en Carmenta y ' +
+    'formación complementaria en auxiliar contable, Excel y tributación paraguaya.',
   sobreMi: [
     'Soy Contadora Pública egresada de la Universidad Nacional de Asunción (2022), donde me ' +
-      'gradué con honores académicos. A lo largo de mi formación complementé la carrera con ' +
-      'talleres, conferencias y webinars sobre tributación, información financiera, ' +
+      'gradué con honores académicos. Desde diciembre de 2023 me desempeño como Analista ' +
+      'Contable en Carmenta. A lo largo de mi formación complementé la carrera con ' +
+      'el curso de Auxiliar Contable y Excel (ISI EDUCA) y talleres, conferencias y webinars sobre tributación, información financiera, ' +
       'emprendedurismo e inversiones.',
-    'Cuento con experiencia en atención al cliente, apertura y cierre de caja, recepción de ' +
+    'Además, cuento con experiencia en atención al cliente, apertura y cierre de caja, recepción de ' +
       'proveedores y tareas administrativas como mesa de entradas y organización de archivos, ' +
       'tanto en el sector comercial como en el cooperativo.',
     'Mis objetivos laborales y personales son desempeñarme con responsabilidad, honestidad y ' +
@@ -71,12 +58,23 @@ export const content: Content = {
     'Diploma Alumna Distinguida — Colegio María Auxiliadora, 2015',
   ],
   skills: [
-    { categoria: 'Contabilidad y finanzas', items: ['Contabilidad general', 'Información financiera', 'Planillas electrónicas'] },
+    { categoria: 'Contabilidad y finanzas', items: ['Contabilidad general', 'Análisis contable', 'Información financiera', 'Auxiliar contable'] },
+    { categoria: 'Herramientas', items: ['Microsoft Excel', 'Planillas electrónicas'] },
     { categoria: 'Tributación', items: ['IVA', 'IRP', 'IRAGRO', 'IRACIS'] },
     { categoria: 'Gestión administrativa', items: ['Apertura y cierre de caja', 'Recepción de proveedores', 'Mesa de entradas', 'Organización de archivos'] },
     { categoria: 'Atención al cliente', items: ['Atención al público', 'Recepción de llamadas', 'Comunicación'] },
   ],
   experiencia: [
+    {
+      puesto: 'Analista Contable',
+      empresa: 'Carmenta',
+      periodo: '12/2023 — Actualidad',
+      detalles: [
+        'Registro y control de operaciones contables.',
+        'Análisis y conciliación de cuentas.',
+        'Apoyo en la preparación de información financiera y obligaciones tributarias.',
+      ],
+    },
     {
       puesto: 'Cajera',
       empresa: 'Carnicería El Rodeo — Villeta',
@@ -100,6 +98,7 @@ export const content: Content = {
     },
   ],
   cursos: [
+    { titulo: 'Auxiliar Contable y Excel', emisor: 'Instituto ISI EDUCA', fecha: '' },
     { titulo: 'Elaboración y manejo de planilla electrónica', emisor: 'SNPP', fecha: '2020' },
     {
       titulo: 'Taller: IVA, IRP, IRAGRO e IRACIS',
@@ -139,7 +138,7 @@ export const ui = {
   },
   labels: {
     ver: 'Ver ↗', valores: 'Valores', reconocimientos: 'Reconocimientos', sendEmail: 'Enviar correo',
-    contactText: 'Estoy disponible para nuevas oportunidades laborales. Escribime por correo o WhatsApp y te respondo a la brevedad.',
+    contactText: 'Si querés ponerte en contacto conmigo por oportunidades laborales o consultas profesionales, escribime por correo o WhatsApp y te respondo a la brevedad.',
     footer: 'Contadora Pública · Paraguay',
   },
 }
