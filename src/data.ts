@@ -29,6 +29,20 @@ interface Content {
   rol: string
   ubicacion: string
   disponibilidad: string
+  resumen: string
+  sobreMi: string[]
+  valores: string[]
+  reconocimientos: string[]
+  skills: Skill[]
+  experiencia: Exp[]
+  cursos: Curso[]
+  educacion: Edu[]
+}
+
+export const content: Content = {
+  rol: 'Contadora Pública · Analista Contable',
+  ubicacion: 'Nueva Italia, Paraguay',
+  disponibilidad: 'Analista Contable en Carmenta',
   resumen:
     'Contadora Pública egresada con honores académicos de la Universidad Nacional de ' +
     'Asunción, con más de 2 años de experiencia como Analista Contable en Carmenta y ' +
@@ -36,8 +50,8 @@ interface Content {
   sobreMi: [
     'Soy Contadora Pública egresada de la Universidad Nacional de Asunción (2022), donde me ' +
       'gradué con honores académicos. Desde diciembre de 2023 me desempeño como Analista ' +
-      'Contable en Carmenta. A lo largo de mi formación complementé la carrera con ' +
-      'el curso de Auxiliar Contable y Excel (ISI EDUCA) y talleres, conferencias y webinars sobre tributación, información financiera, ' +
+      'Contable en Carmenta. Complementé mi formación con el curso de Auxiliar Contable y ' +
+      'Excel (ISI EDUCA) y con talleres, conferencias y webinars sobre tributación, información financiera, ' +
       'emprendedurismo e inversiones.',
     'Además, cuento con experiencia en atención al cliente, apertura y cierre de caja, recepción de ' +
       'proveedores y tareas administrativas como mesa de entradas y organización de archivos, ' +
@@ -138,7 +152,7 @@ export const ui = {
   },
   labels: {
     ver: 'Ver ↗', valores: 'Valores', reconocimientos: 'Reconocimientos', sendEmail: 'Enviar correo',
-    contactText: 'Si querés ponerte en contacto conmigo por oportunidades laborales o consultas profesionales, escribime por correo o WhatsApp y te respondo a la brevedad.',
+    contactText: 'Para oportunidades laborales o consultas profesionales, escribime por correo o WhatsApp y te respondo a la brevedad.',
     footer: 'Contadora Pública · Paraguay',
   },
 }
