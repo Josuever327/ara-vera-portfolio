@@ -1,0 +1,139 @@
+/* ===================== NAV ===================== */
+.nav {
+  position: sticky; top: 0; z-index: 50;
+  backdrop-filter: blur(10px);
+  background: color-mix(in srgb, var(--bg) 85%, transparent);
+  border-bottom: 1px solid var(--border);
+}
+.nav-inner { display: flex; align-items: center; justify-content: space-between; height: 58px; }
+.nav-brand { font-weight: 500; font-size: 0.92rem; letter-spacing: 0.14em; text-transform: uppercase; }
+.nav-right { display: flex; align-items: center; gap: 12px; }
+.nav-links { display: flex; gap: 26px; align-items: center; }
+.nav-links a { color: var(--text-soft); font-size: 0.9rem; transition: color 0.18s; }
+.nav-links a:hover { color: var(--text); }
+.theme-toggle, .nav-burger {
+  background: transparent; border: 1px solid var(--border); color: var(--text-soft);
+  width: 34px; height: 34px; border-radius: 8px; cursor: pointer;
+  display: grid; place-items: center; transition: border-color 0.18s, color 0.18s;
+  flex-shrink: 0;
+}
+.theme-toggle { font-size: 0.9rem; }
+.nav-burger { display: none; font-size: 1rem; line-height: 1; }
+.theme-toggle:hover, .nav-burger:hover { border-color: var(--text-dim); color: var(--text); }
+
+/* ----- Menú responsive: hamburguesa en mobile ----- */
+@media (max-width: 760px) {
+  .nav-burger { display: grid; }
+  .nav-links {
+    position: absolute; top: 100%; left: 0; right: 0;
+    flex-direction: column; align-items: stretch; gap: 0;
+    background: var(--bg); border-bottom: 1px solid var(--border);
+    padding: 6px 20px 14px;
+    box-shadow: 0 12px 24px rgba(0,0,0,.08);
+    display: none;
+  }
+  .nav-links.open { display: flex; }
+  .nav-links a {
+    padding: 13px 2px; font-size: 1rem; color: var(--text);
+    border-bottom: 1px solid var(--border);
+  }
+  .nav-links a:last-child { border-bottom: none; }
+}
+
+/* ===================== HERO ===================== */
+/* Inspirado en el encabezado del CV: foto a la izquierda, nombre en mayúsculas finas,
+   rol en cursiva espaciada y una línea gruesa debajo. */
+.hero { padding: 80px 0 64px; }
+.hero-grid { display: grid; grid-template-columns: 220px 1fr; gap: 48px; align-items: center; }
+.hero-monogram {
+  width: 56px; height: 56px; border-radius: 50%;
+  border: 1px solid var(--border); display: grid; place-items: center;
+  font-weight: 600; font-size: 1.1rem; letter-spacing: 0.02em; color: var(--text-soft);
+  overflow: hidden;
+}
+.hero-monogram.has-photo { width: 220px; height: 240px; border: none; border-radius: 50%; background: var(--bg-soft); }
+@media (max-width: 720px) {
+  .hero { padding: 48px 0 52px; }
+  .hero-grid { grid-template-columns: 1fr; gap: 28px; }
+  .hero-monogram.has-photo { width: 160px; height: 176px; }
+}
+.hero-monogram img { width: 100%; height: 100%; object-fit: cover; }
+.hero-badge {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-size: 0.82rem; color: var(--text-soft);
+  border: 1px solid var(--border); border-radius: 999px; padding: 5px 12px; margin-bottom: 18px;
+}
+.hero-badge .dot { width: 7px; height: 7px; border-radius: 50%; background: #22c55e; box-shadow: 0 0 0 3px color-mix(in srgb, #22c55e 22%, transparent); }
+.hero-name {
+  font-size: clamp(1.9rem, 5vw, 2.9rem); font-weight: 400; line-height: 1.12;
+  letter-spacing: 0.04em; text-transform: uppercase;
+}
+.hero-role {
+  font-size: clamp(0.95rem, 2.2vw, 1.15rem); color: var(--text-soft); margin-top: 12px;
+  font-style: italic; font-weight: 400; letter-spacing: 0.2em; text-transform: uppercase;
+}
+.hero-rule { width: min(100%, 380px); height: 3px; background: var(--text); margin-top: 22px; border-radius: 2px; }
+.hero-summary { color: var(--text-soft); margin: 22px 0 26px; max-width: 600px; font-size: 1.02rem; }
+.hero-meta { display: flex; flex-wrap: wrap; gap: 8px 22px; margin-bottom: 26px; font-size: 0.9rem; color: var(--text-dim); }
+.hero-meta a { color: var(--text-soft); transition: color 0.18s; }
+.hero-meta a:hover { color: var(--accent); }
+.hero-actions { display: flex; gap: 10px; flex-wrap: wrap; }
+
+/* ===================== SKILLS ===================== */
+.skill-cat { font-weight: 600; margin-bottom: 12px; font-size: 0.95rem; }
+.skill-list { display: flex; flex-wrap: wrap; gap: 7px; }
+
+/* ===================== EXPERIENCIA ===================== */
+.exp-item { display: grid; grid-template-columns: 130px 1fr; gap: 20px; padding: 22px 0; border-top: 1px solid var(--border); }
+.exp-item:first-child { border-top: none; padding-top: 0; }
+.exp-periodo { color: var(--text-dim); font-size: 0.85rem; font-variant-numeric: tabular-nums; padding-top: 2px; }
+.exp-puesto { font-weight: 600; font-size: 1.05rem; }
+.exp-empresa { color: var(--text-soft); font-size: 0.92rem; margin: 2px 0 12px; }
+.exp-detalles { list-style: none; }
+.exp-detalles li { color: var(--text-soft); padding-left: 16px; position: relative; margin-bottom: 5px; font-size: 0.94rem; }
+.exp-detalles li::before { content: '•'; position: absolute; left: 0; color: var(--text-dim); }
+@media (max-width: 640px) { .exp-item { grid-template-columns: 1fr; gap: 6px; } }
+
+/* ===================== PROYECTOS ===================== */
+.proj-title { font-weight: 600; font-size: 1.05rem; margin-bottom: 8px; display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.proj-links { display: flex; gap: 12px; flex-shrink: 0; }
+.proj-links a { color: var(--text-dim); font-size: 0.85rem; }
+.proj-links a:hover { color: var(--accent); }
+.proj-desc { color: var(--text-soft); margin-bottom: 14px; font-size: 0.93rem; }
+.proj-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+
+/* ===================== SOBRE MÍ ===================== */
+.about-text { max-width: 680px; }
+.about-text p { color: var(--text-soft); margin-bottom: 14px; }
+.about-text p:last-child { margin-bottom: 0; }
+
+/* ===================== LISTAS (cert / educacion / idiomas) ===================== */
+.list-row { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; padding: 14px 0; border-top: 1px solid var(--border); }
+.list-row:first-child { border-top: none; }
+.list-main { font-weight: 500; font-size: 0.98rem; }
+.list-sub { color: var(--text-soft); font-size: 0.88rem; margin-top: 2px; }
+.list-meta { color: var(--text-dim); font-size: 0.83rem; white-space: nowrap; font-variant-numeric: tabular-nums; text-align: right; }
+.list-note { color: var(--text-dim); font-size: 0.86rem; margin-top: 4px; }
+.list-right { display: flex; align-items: baseline; gap: 14px; flex-shrink: 0; }
+.list-link { font-size: 0.83rem; color: var(--text-soft); white-space: nowrap; transition: color 0.18s; }
+.list-link:hover { color: var(--accent); }
+
+/* En pantallas chicas, la fila se apila: título arriba, fecha/enlace abajo */
+@media (max-width: 560px) {
+  .list-row { flex-direction: column; gap: 6px; }
+  .list-right { width: 100%; justify-content: space-between; }
+  .list-meta { text-align: left; white-space: normal; }
+}
+
+.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+@media (max-width: 720px) { .two-col { grid-template-columns: 1fr; gap: 28px; } }
+.mini-title { font-size: 0.78rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-dim); margin-bottom: 14px; }
+.soft-list { list-style: none; }
+.soft-list li { color: var(--text-soft); padding: 5px 0; font-size: 0.93rem; border-bottom: 1px solid var(--border); }
+.soft-list li:last-child { border-bottom: none; }
+
+/* ===================== CONTACTO / FOOTER ===================== */
+.contact-data { display: flex; flex-direction: column; gap: 4px; color: var(--text-soft); font-size: 0.95rem; margin-bottom: 24px; }
+.contact-links { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 4px; }
+.footer { border-top: 1px solid var(--border); padding: 28px 0; color: var(--text-dim); font-size: 0.85rem; }
+.footer-inner { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
