@@ -1,10 +1,10 @@
 /* ===================== TEMA / VARIABLES ===================== */
 /* Estilo: basado en el CV — blanco, tipografía limpia y acento marrón oscuro. */
 :root {
-  --bg: #ffffff;
-  --bg-soft: #f8f5f3;
-  --card: #ffffff;
-  --border: #ebe4e0;
+  --bg: #f6efe6;              /* beige suave */
+  --bg-soft: #efe5d9;
+  --card: #fbf7f2;
+  --border: #e2d5c6;
   --text: #241e1c;
   --text-soft: #554a46;
   --text-dim: #93867f;
